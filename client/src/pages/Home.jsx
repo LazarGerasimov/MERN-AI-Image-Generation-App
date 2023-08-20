@@ -3,6 +3,12 @@ import { useState, useEffect } from 'react';
 
 import { Loader, Card, FormField } from '../components';
 
+const RenderCards = ({ data, title }) => {
+  if (data?.length > 0) {
+    return data.map((post) => <Card key={post._id} {...post} />);
+  }
+};
+
 const Home = () => {
 
   const [loading, setLoading] = useState(false);
@@ -34,6 +40,12 @@ const Home = () => {
                   Showing Results for <span className='text-[#222328]'>{searchText}</span>
                 </h2>
               )}
+              <div className='grid lg:grid-cols-4
+              sm:grid-cols-3
+              xs:grid-cols-2
+              grid-cols-1 gap-3'>
+
+              </div>
             </>
           )}
         </div>
