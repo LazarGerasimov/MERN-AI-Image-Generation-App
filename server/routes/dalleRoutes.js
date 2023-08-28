@@ -14,4 +14,12 @@ router.route('/').get((req, res) => {
     res.send('Test route');
 });
 
+router.route('/').post(async (req, res) => {
+    try {
+        const { prompt } = req.body;
+    } catch (error) {
+        
+    }
+})
+
 export default router;
